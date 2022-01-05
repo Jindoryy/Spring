@@ -1,4 +1,4 @@
-# 유효 범위와 속성
+# JSP의 유효 범위와 속성
 
 JSP에서 제공하는 session, request, application 객체들은 해당객체에 정의된 유효범위 안에서 서로 공유할 수 있는 특정한 영역을 가지고 있다. 
 공유되는 데이터는 attribute(속성)라고 하며 속성을 공유할 수 있는 유효 범위를 scope(영역)이라고 한다.
@@ -20,6 +20,8 @@ request내장객체는 클라이언트의 요청이 처리되는 동안에 속�
 page영역은 위에 3가지 영역과 다르게 pageContext내장객체를 통해 접근할 수 있는 영역이다.
 
 
+
+
 - JSP에서 정의하는 영역은 page, reauest, session, application으로 구성된다. 
 
 
@@ -29,6 +31,8 @@ page영역은 위에 3가지 영역과 다르게 pageContext내장객체를 통�
 |request|request|클라이언트의 요청이 처리되는 동안 유효
 |session|session|세션이 유지되는 동안 유효
 |application|application|웹 어플리케이션이 실행되고 있는 동안 유효
+
+
 
 
 - 속성과 관련된 메서드들
