@@ -4,7 +4,10 @@
 하나의 서블릿이나 JSP만으로 비즈니스 로직과 뷰 렌더링까지 모두 처리하면 하나의 코드가 너무많은 역할을 하게된다.
 **즉 비즈니스 로직의 변경이 발생해도 해당 코드를 손대야 하고, UI를 변경할 일이 있어도 비즈니스 로직이 함께있는 파일을 수정해야 한다는 것이다.**
 
-<center><img width="40%" src="https://user-images.githubusercontent.com/87755660/148186940-a8172dd5-3b09-48e3-b7a5-e6bd82897a96.png"/></center>
+<p align="center">
+  <img width="40%" src="https://user-images.githubusercontent.com/87755660/148186940-a8172dd5-3b09-48e3-b7a5-e6bd82897a96.png"/>
+</p>
+
 - JSP와 HTML이 함께 있는 모습이다. 위의 코드는 짧고 간단해 유지보수가 어렵지 않지만, 
 큰 프로젝트에서 HTML 코드하나를 수정해야 하는데 수백 수천줄의 JSP코드가 HTML코드가 함께 있다고 상상하면 쉬운일이 아니다.
 
@@ -26,7 +29,10 @@
 2. Model: 뷰에 출력할 데이터를 담아둔다. 뷰가 필요한 데이터를 모두 Model에 담아서 전달해주는 덕분에 뷰는 비즈니스 로직이나 접근을 몰라도 되고, 화면을 렌더링 하는 일에만 집중 할 수 있다.
 3. View: 모델에 담겨있는 데이터를 사용해서 화면을 그리는 것에 집중한다. 여기서는 HTML을 생성하는 부분을 말한다.
 
-<center><img width="40%" src="https://user-images.githubusercontent.com/87755660/148187874-76186d38-0cf6-4b5b-b326-dc6b36aaf08f.png"/></center>
+<p align="center">
+  <img width="40%" src="https://user-images.githubusercontent.com/87755660/148187874-76186d38-0cf6-4b5b-b326-dc6b36aaf08f.png"/>
+</p>
+
 - 클라이언트가 Controller를 호출하면 컨트롤러에서 비즈니스 로직과 데이터에 접근해서 얻어진 데이터를 Model에 전달하고 제어권을 뷰 로직으로 넘긴다. 
 뷰에서는 Model에 있는 데이터를 참조해서 뷰를 렌더링하고 HTML응답으로 클라이언트에게 보내준다.
 
@@ -34,8 +40,11 @@
 request.setAttribute(), request.getAttribute() 를 사용하면 데이터를 보관하고 조회할 수 있다. 
 View로 제어권을 넘겨줄때는 dispatcher.forward(request, response);를 사용하는데 dispatcher.forward()는 다른서블릿이나 JSP로 이동할 수 있는 기능이다. 서버 내부에서 다시 호출이발생한다.
 
-<center><img width="40%" src="https://user-images.githubusercontent.com/87755660/148188436-f0653463-a558-4611-9eff-c7737cfa864e.png"/></center>
-request가 제공하는 setAttribute()를 사용하면 request 객체에 데이터를 보관해서 뷰에 전달할 수 있다. 뷰는 request.getAttribute()를 사용해서 데이터를 꺼내면 된다.
+<p align="center">
+  <img width="40%" src="https://user-images.githubusercontent.com/87755660/148188436-f0653463-a558-4611-9eff-c7737cfa864e.png"/>
+</p>
+
+- request가 제공하는 setAttribute()를 사용하면 request 객체에 데이터를 보관해서 뷰에 전달할 수 있다. 뷰는 request.getAttribute()를 사용해서 데이터를 꺼내면 된다.
 
 [redirect vs forward]
 리다이렉트는 실제 클라이언트(웹 브라우저)에 응답이 나갔다가, 클라이언트가 redirect 경로로 다시 요청한다. 
