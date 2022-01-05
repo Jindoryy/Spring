@@ -19,7 +19,9 @@ request내장객체는 클라이언트의 요청이 처리되는 동안에 속�
 4. Page :
 page영역은 위에 3가지 영역과 다르게 pageContext내장객체를 통해 접근할 수 있는 영역이다.
 
+
 - JSP에서 정의하는 영역은 page, reauest, session, application으로 구성된다. 
+
 
 |영역|영역객체|속성의 유효 범위|
 |:---:|:---:|:---:|
@@ -28,7 +30,9 @@ page영역은 위에 3가지 영역과 다르게 pageContext내장객체를 통�
 |session|session|세션이 유지되는 동안 유효
 |application|application|웹 어플리케이션이 실행되고 있는 동안 유효
 
+
 - 속성과 관련된 메서드들
+
 
 |리턴 타입|메서드명|기능
 |:---:|:---:|:---:|
